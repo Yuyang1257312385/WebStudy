@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>创建元素</title>
+		<style type="text/css">
+			table{border-collapse: collapse;}
+			tr,td{
+				width: 80px;
+				height: 20px;
+				border: 1px solid gray;
+			}
+		</style>
+		<script>
+			function createNoPro(){
+				var oDiv = document.getElementById("div1");
+				var oStrong = document.createElement("strong");
+				var oTxt = document.createTextNode("动态生成");
+				oStrong.appendChild(oTxt);
+				oDiv.appendChild(oStrong);
+			}
+	     
+	        function createWithPro(){
+	        	var oBtn = document.createElement("input");
+	        	oBtn.id = "submit";
+	        	oBtn.type = "button";
+	        	oBtn.value = "提交";
+	        	document.body.appendChild(oBtn);
+	            oBtn.onclick = function(){
+	            	alert(oBtn.id + "--"+oBtn.type + "--"+oBtn.value);
+	            }
+	        }
+	        
+	        function createMulti(){
+	        	var oTable = document.createElement("table");
+	        	for(var i=0;i<3;i++){
+	        		var oTr = document.createElement("tr");
+	        		for(var j=0;j<3;j++){
+	        			var oTd = document.createElement("td");
+	        			oTr.appendChild(oTd);
+	        		}
+	        		oTable.appendChild(oTr);
+	        	}
+	        	document.body.appendChild(oTable);
+	        }
+	        
+	        function createImg(){
+	        	var oImg = document.createElement("img");
+	        	oImg.className = "pic";
+	        	oImg.src = "img/ic_launcher.png";
+	        	oImg.style = "1px solid silver";
+	        	document.body.appendChild(oImg);
+	        	oImg.onclick = function(){
+	        		alert(oImg.className + "--"+oImg.style);
+	        	}
+	        
+	        }
+		</script>
+	</head>
+	<body>
+		<input type="button" value="创建简单元素" onclick="createNoPro()"/>
+		<input type="button" value="创建复杂元素 带属性" onclick="createWithPro()"/>
+		<input type="button" value="创建多个元素" onclick="createMulti()"/>
+		<input type="button" value="创建动态图片元素" onclick="createImg()"/>
+		<div id="div1"></div>
+		
+	</body>
+</html>

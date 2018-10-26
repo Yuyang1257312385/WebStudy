@@ -1,0 +1,1 @@
+document.write("外部引入——body引入");

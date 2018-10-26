@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环结构</title>
+		<script>
+			function funWhile(){
+				var a = 2;
+				while(a < 5){
+					document.write(a);
+					a++;
+				}
+			}
+			
+			function funDoWhile(){
+				var a = 2;
+				do{
+					document.write(a);
+				}while (a<2);
+			}
+			
+			function funFor(){
+				for( var i =0;i<3;i++){
+					document.write("now is " + i + "</br>");
+				}
+			}
+			
+			function circulation(){
+				funWhile();
+				funDoWhile();
+				funFor();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="循环结构" onclick="circulation()" />
+	</body>
+</html>

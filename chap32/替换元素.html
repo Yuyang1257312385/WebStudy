@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>替换元素</title>
+		<script>
+			function repla(){
+				//查找body的第一个元素
+				var oFirst = document.getElementById("fir");
+				//没用
+//				var oFirst = document.querySelector("body*:first-child");
+				var oTag = document.getElementById("tag");
+				var oTxt = document.getElementById("txt");
+				var oTa = document.createElement(oTag.value);
+				var oTx = document.createTextNode(oTxt.value);
+				oTa.appendChild(oTx);
+				
+				document.body.replaceChild(oTa,oFirst);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p id="fir">原来</p>
+		标签 : <input id="tag" type="text" /></br>
+		内容 : <input id="txt" type="text" /></br>
+		<input type="button" value="替换" onclick="repla()"  />
+	</body>
+</html>

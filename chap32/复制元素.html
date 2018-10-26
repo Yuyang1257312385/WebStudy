@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复制元素</title>
+		<script>
+			function copyEle(){
+				var oUl = document.getElementById("list");
+				//1 :复制该元素及之下的子元素   0: 不复制子元素
+				document.body.appendChild(oUl.cloneNode(1))
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+		</ul>
+		<input type="button" value="复制元素" onclick="copyEle()" />
+	</body>
+</html>

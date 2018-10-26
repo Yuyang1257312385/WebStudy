@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>插入元素</title>
+		
+		<script>
+			function funAppend(){
+				var oInsertUl = document.getElementById("ul_insert");
+				var oLi = document.createElement("li");
+				var oTxt = document.createTextNode("append");
+				oLi.appendChild(oTxt);
+				oInsertUl.appendChild(oLi);
+			}
+			
+			function funInsert(){
+				var oInsertUl = document.getElementById("ul_insert");
+				var oLiRef = document.getElementById("js");
+				
+				var oLi = document.createElement("li");
+				var oTxt = document.createTextNode("insert before js");
+				oLi.appendChild(oTxt);
+				oInsertUl.insertBefore(oLi,oLiRef);
+				
+				var oLi1 = document.createElement("li");
+				var oTxt1 = document.createTextNode("insert bofore firstelement");
+				oLi1.appendChild(oTxt1);
+				//将新元素插到父元素的第一个元素之前
+				oInsertUl.insertBefore(oLi1,oInsertUl.firstElementChild);
+			}
+		</script>
+		
+	</head>
+	<body>
+		<ul id="ul_insert">
+			<li>html</li>
+			<li >css</li>
+			<li id="js">js</li>
+		</ul>
+		
+		<input type="button" value="appendChild()" onclick="funAppend()" />
+	    <input type="button" value="insertBefore()" onclick="funInsert()" />
+	</body>
+</html>

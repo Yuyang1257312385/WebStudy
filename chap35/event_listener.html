@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>EventListener</title>
+		<script>
+			window.onload = function(){
+				var oBtn = document.getElementById("btn");
+				var oBtn2 = document.getElementById("btn_1");
+				
+				oBtn.addEventListener("click",function(){
+					alert("第一次");
+				},false);
+				oBtn.addEventListener("click",function(){
+					alert("第二次");
+				},false);
+				oBtn.addEventListener("click",function(){
+					alert("第三次");
+				},false);
+				
+				oBtn2.onclick = function(){
+					alert("第一次");
+				}
+				oBtn2.onclick = function(){
+					alert("第二次");
+				}
+				oBtn2.onclick = function(){
+					alert("第三次");
+				}
+				
+				var oDiv = document.getElementById("content");
+				var oRemoveBtn = document.getElementById("btn_reomve_listener");
+				oDiv.addEventListener("mouseover",overColor,false);
+				oDiv.addEventListener("mouseout",outColor,false);
+				oRemoveBtn.addEventListener("click",function(){
+					oDiv.removeEventListener("mouseover",overColor,false);
+					oDiv.removeEventListener("mouseout",outColor,false);
+				},false);
+				
+				
+				function overColor(){
+					this.style.color = "hotpink";
+				}
+				
+				function outColor(){
+					this.style.color = "black";
+				}
+				
+				var oOneceBtn = document.getElementById("btn_onece");
+				var oTwiceBtn = document.getElementById("btn_twice");
+				var once = 0;
+				var twice = 0;
+				
+				
+				
+				oOneceBtn.onclick = function(){
+					once++;
+					alert(once + "次");
+					if(once >=1){
+						alert("已经一次了，不能点了")
+						oOneceBtn.onclick =  null;
+					}
+				}
+				
+				oTwiceBtn.addEventListener("click",clickFun,false);
+				
+				function clickFun(){
+					twice++;
+					alert(twice + "次");
+					if(twice >= 2){
+						alert("已经两次了，不能点了")
+						oTwiceBtn.removeEventListener("click",clickFun,false);
+					}
+				}
+//				
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<input id="btn" type="button" value="addEventListener click" />
+		<input id="btn_1" type="button" value="onclick" />
+		
+		<p id="content">hello</p>
+		<input id="btn_reomve_listener" type="button" value="解除事件监听器" />
+		
+		<input id="btn_onece" type="button" value="仅可点击一次  事件处理器实现" />
+		<input id="btn_twice" type="button" value="仅可点击两次  事件监听器实现" />
+
+	</body>
+</html>

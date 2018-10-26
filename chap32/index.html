@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dom基础</title>
+		<script>
+			window.onload = function(){
+				
+				var oUl = document.getElementById("list");
+				var oLi = oUl.getElementsByTagName("li");
+				oLi[1].style.color = "red";
+				//注意与下面区分 oUl仅仅获得的是id为list之下的，document获取的是整个文件的
+				//document.getElementsByTagName("li");
+				
+				var oAddUl = document.getElementById("ul_add");
+				var oAddLi = oAddUl.getElementsByTagName("li");
+				for(var i=0;i<oAddLi.length;i++){
+					oAddLi[i].innerHTML = "第 " + i;
+					oAddLi[i].style.color = (i%2==0 ? "red" : "black");
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<a href="获取元素.html">获取元素</a>
+		<a href="创建元素.html">创建元素</a>
+		<a href="插入元素.html">插入元素</a>
+		<a href="删除元素.html">删除元素</a>
+		<a href="复制元素.html">复制元素</a>
+		<a href="替换元素.html">替换元素</a>
+		
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			function writeLf(str){
+				document.write(str + "</br>");
+			}
+			
+			//1. 获取字符串长度
+			var str = "aBcC456cDeF";
+			writeLf("str : " + str);
+			writeLf("str.length : " + str.length);
+			//2. 转为大写
+			writeLf("str.toUpperCase() : " + str.toUpperCase());
+			//3. 转为小写
+			str = "aBcC456cDeF";
+			writeLf("str.toLowerCase() : " + str.toLowerCase());
+			//4. 获取某个下标的字符串
+			writeLf("str.chartAt(6) is " + str.charAt(6));
+			//5. 截取字符串  
+			writeLf("str.substring(2) is " + str.substring(2));
+			writeLf("str.substring(2,4) is " + str.substring(2,4));
+			//6. 替换字符串  仅仅会替换第一个，使用正则表达式会替换所有
+			writeLf('str.replace("c","替换") : ' + str.replace("c","替换"));
+			//7. 分割字符串
+			str = "html;css;js";
+			writeLf("str : " + str);
+			var arr = str.split(";");
+			writeLf('str.split(";")' + arr);
+			arr = str.split("");
+			writeLf('str.split("") : ' + arr);
+			//8. 检索字符串的位置
+			var index = str.indexOf(";");
+			writeLf('str.indexOf(";") : ' + index);
+			var lastIndex = str.lastIndexOf(";");
+			writeLf('str.lastIndexOf(";") : ' + lastIndex);
+			//9. 练习1： 统计某一个字符的个数
+			str = "1223334444";
+			function getCharCount(s,c){
+				var count = 0;
+				for(var i =0 ;i<s.length ; i++){
+					if(s.charAt(i) == c){
+						count ++;
+					}
+				}
+				return count;
+			}
+			writeLf(str + "中 有多少个 3 ： " + getCharCount(str,"3") + "个");
+			//10 练习2 ： 统计字符串中有多少数字
+			str = "1234hahaha";
+			function getNumCount(s){
+				var count = 0;
+				for(var i=0;i<s.length;i++){
+					var cha = s.charAt(i);
+					
+			        //注意此处的调用方式
+					if(!isNaN(cha)){
+						count++;
+					}
+				}
+				return count;
+			}
+			writeLf("str 中有 " + getNumCount(str) + " 个数字");
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

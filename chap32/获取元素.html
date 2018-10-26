@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取元素</title>
+		<script>
+			function getById(){
+				var oDiv = document.getElementById("div1");
+				oDiv.style.color = "red";
+			}
+			
+			function getByTagName(){
+				var oUl = document.getElementById("list");
+				var oLi = oUl.getElementsByTagName("li");
+				oLi[1].style.color = "blue";
+				
+				var oAddUl = document.getElementById("ul_add");
+				var oAddLi = oAddUl.getElementsByTagName("li");
+				for(var i=0;i<oAddLi.length;i++){
+					oAddLi[i].innerHTML = "第 " + i;
+					oAddLi[i].style.color = (i%2==0 ? "red" : "blue");
+				}
+			}
+			
+			function getByClassName(){
+				var oUl = document.getElementById("ul_cls");
+				var oLis = oUl.getElementsByClassName("cls");
+				for(var i=0;i<oLis.length;i++){
+					oLis[i].style.color = "red";
+				}
+			}
+			
+			function getByQuery(){
+				//查询class为test的元素,仅获取第一个
+				var oDiv = document.querySelector(".test");
+				oDiv.style.color = "yellow";
+				
+				var oLis = document.querySelectorAll("#ul_query li");
+				for(var i=0;i<oLis.length;i++){
+					oLis[i].style.color = "yellowgreen";
+				}
+			}
+			
+			function getByName(){
+				var oInput = document.getElementsByName("status");
+				oInput[1].checked = true;
+				
+				var oFruit = document.getElementsByName("fruit");
+				for(var i=0;i<oFruit.length;i++){
+					oFruit[i].checked = true;
+				}
+			}
+			
+			function titleAndBody(){
+				document.title = "new title";
+				document.body.innerHTML = "this is new  body";
+			}
+		</script>
+	</head>
+	<body>
+		获取方式</br>
+		<input type="button" value="document.getElementById('id')" onclick="getById()" /></br>
+		<input type="button" value="***.getElementsByTagName('tagname')" onclick="getByTagName()" /></br>
+		<input type="button" value="***.getElementsByClassName('className')" onclick="getByClassName()" /></br>
+		<input type="button" value="document.querySelector('#id tag')" onclick="getByQuery()" /></br>
+		<input type="button" value="document.getElementsByName('fruit')" onclick="getByName()" /></br>
+		<input type="button" value="document.title 和 document.body" onclick="titleAndBody()" /></br>
+		
+
+		通过id获取：</br>
+		<div id="div1">JavaScript</div>
+		
+		通过TagName获取：</br>
+		<ul id="list">
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+		</ul>
+		
+		
+		<ul id="ul_add">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		通过class获取：</br>
+		
+		<ul id="ul_cls">
+			<li>haha</li>
+			<li>hoho</li>
+			<li class="cls">class is cls</li>
+			<li class="cls">class is cls</li>
+		</ul>
+		
+		quarySelector 和 querySelectorAll:</br>
+		<div>hahaha</div>
+		<div class="test">hohoho</div>
+		<div class="test">hihihi</div>
+		
+		<ul id="ul_query">
+			<li>aiaiai</li>
+			<li>bibibi</li>
+			<li>cicici</li>
+		</ul>
+		
+		你的最高学历：
+		<label><input type="radio" name="status" value="小学"/>小学</label>
+		<label><input type="radio" name="status" value="初中"/>初中</label>
+		<label><input type="radio" name="status" value="高中"/>高中</label>
+		
+	   </br>
+	   
+	   你喜欢的水果：
+	   <label><input type="checkbox" name="fruit" value="apple"/>苹果</label>
+	   <label><input type="checkbox" name="fruit" value="banana"/>香蕉</label>
+	   <label><input type="checkbox" name="fruit" value="orange"/>橘子</label>
+
+
+	</body>
+</html>

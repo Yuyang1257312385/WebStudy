@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>基本语法</title>
+		<script>
+			//变量常量
+			function funVarOrConst(){
+				var a = 10;
+				a = 11;
+				document.write(a+"</br>");
+				const B = "haha";
+				//若添加此行，不会打印B
+				//B = "hoho"
+				document.write(B);
+			}
+			
+			//数据类型
+			function varType(){
+				var a = 10;
+				document.write(a+"</br>");
+				var str = "里面包含'单引号'";
+			    document.write(str+"</br>");
+			    var str2 = '包含"双引号"';
+			    document.write(str2+"</br>");
+			    var bool = false;
+			    document.write("布尔值:"+bool+"</br>");
+			    var n;
+			    document.write("未定义值 ： "+ n + "</br>");
+			    var nu = null;
+			    document.write("空值 ： "+ nu +"</br>");
+			}
+			
+			function opr(){
+				writeLf("算数运算符")
+				writeLf("5+5= "+ (5+5));
+				writeLf("今年是"+2018);
+				writeLf("5-1="+ (5-1));
+				writeLf("5*5="+(5*5));
+				writeLf("5/2="+(5/2));
+				writeLf("5%2="+(5%2));
+				var i = 2;
+				writeLf("i="+i);
+				var j = i++;
+				writeLf("j = i++ :"+j);
+				i=2;
+				j = ++i;
+				writeLf("j = ++i : "+j );
+				i=2;
+				j=i--;
+				writeLf("j=i-- : "+ j);
+				i=2;
+				j=--i;
+				writeLf("j=--i : "+j);
+			
+				writeLf("赋值运算符");
+				var a = 3;
+				var b = 2;
+				writeLf("a = "+ a + "  b = "+ b);
+				a += b;
+				writeLf("a += b : "+ a);
+				a = 3;
+				b = 2;
+				a -=b;
+				writeLf("a -= b: " + a );
+				a = 3;
+				b = 2;
+				writeLf("a *= b : " + (a*=b));
+				a = 3;
+				b = 2;
+				writeLf("a /= b : " + (a/=b));
+				
+				
+				writeLf("比较运算符");
+				a=3;
+				b=2;
+				writeLf("a > b : " + (a>b));
+				writeLf("a <  b : " + (a<b));
+				writeLf("a >= b : " + (a>=b));
+				writeLf("a <= b : " + (a<=b));
+				writeLf("a == b : "+ (a==b));
+				writeLf("a != b : "+ (a != b));
+				
+				writeLf("逻辑运算符");
+				writeLf(" && || ！");
+				
+				writeLf("条件运算符");
+				var c = (a > b) ? a : b;
+				writeLf("var c = (a > b) ? a : b; c = "+ c);
+			}
+			
+			function cast(){
+				writeLf("类型转换 字符串转数字")
+
+				writeLf("类型转换  Number: ");
+				writeLf('Number("123") : ' + Number("123"));
+				writeLf('Number("3.14") : '+ Number("3.14"));
+				writeLf('Number("hao123") : ' + Number("hao123")  + "---表示Not a Number");
+				writeLf('Number("100px") : ' + Number("100px"));
+				
+				writeLf("类型转换 parseInt() :  ");
+				writeLf('parseInt("123") : ' + parseInt("123"));
+				writeLf('parseInt("3.14") : '+ parseInt("3.14"));
+				writeLf('parseInt("hao123") : ' + parseInt("hao123") );
+				writeLf('parseInt("100px") : ' + parseInt("100px"));
+				
+				writeLf("类型转换 parseFloat() :  ");
+				writeLf('parseFloat("123") : ' + parseFloat("123"));
+				writeLf('parseFloat("3.14") : '+ parseFloat("3.14"));
+				writeLf('parseFloat("hao123") : ' + parseFloat("hao123") );
+				writeLf('parseFloat("100px") : ' + parseFloat("100px"));
+				
+				writeLf("类型转换 数字转字符串");
+				writeLf('直接使用 +""' + 2018);
+				var a = 29;
+				writeLf("a.toString() : " + a.toString());
+			}
+			
+			
+			function writeLf(n){
+				document.write(n+"</br>");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="变量和常量" onclick="funVarOrConst()" /></br>
+		<input type="button" value="基本数据类型" onclick="varType()" /></br>
+		<input type="button" value="运算符" onclick="opr()" /></br>
+		<input type="button" value="类型转换" onclick="cast()" /></br>
+		
+	</body>
+</html>

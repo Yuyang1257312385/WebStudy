@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>嵌套函数</title>
+		<script>
+			//定义阶乘
+			function func(n){
+				//定义嵌套函数 计算平方
+				function multi(x){
+					return x*x;
+				}
+				
+				var m = 1;
+				for(var i = 1;i<=multi(n);i++){
+					m = m*i;
+				}
+				return m;
+			}
+			
+			document.write(func(2));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择结构</title>
+		<script>
+			function funIf(){
+				var a = 3;
+				var b = 1;
+				if(a > b){
+					document.write(a);
+				}else {
+					document.write(b);
+				}
+				document.write("</br>");
+				
+			}
+			
+			function funOp(){
+				var a = 3;
+				var b = 2;
+				document.write(a>b ? a : b);
+			}
+			
+			function funSwitch(){
+				var a = 2;
+				switch(a){
+					case 1:
+					  document.write("是一");
+					  break;
+					case 2:
+					  document.write("是二");
+					  break;
+					default:
+					  document.write("默认值");
+					  break;
+				}
+			}
+			
+			function condition(){
+				funIf();
+				funOp();
+				funSwitch();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="选择结构" onclick="condition()" />
+	</body>
+</html>
