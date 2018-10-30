@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.main{color: red;}
+		</style>
+		<script>
+			function getAttr(){
+				var oGetBtn = document.getElementById("btn_get");
+				alert("自带的attr: " + oGetBtn.getAttribute("value") + "----" + "自定义的attr : " + oGetBtn.getAttribute("data"));
+			}
+			
+			function setAttr(){
+				var oSetBtn = document.getElementById("btn_set");
+				oSetBtn.setAttribute("value","设置的新值");
+				oSetBtn.setAttribute("data","new data");
+				alert(oSetBtn.getAttribute("value") + "----" + oSetBtn.getAttribute("data"))
+			}
+			
+			function removeAttr(){
+				var oP = document.getElementsByTagName("p");
+				if(oP[0].hasAttribute("class")){
+					oP[0].removeAttribute("class");
+				}
+			}
+			
+			function addAttr(){
+				var oP = document.getElementsByTagName("p");
+				oP[0].setAttribute("class","main");
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input id="btn_get" type="button" value="获取属性" data="自定义属性" onclick="getAttr()" />
+		<input id="btn_set" type="button" value="设置属性" data="data" onclick="setAttr()" />
+		<input id="btn_remove" type="button" value="移除属性" onclick="removeAttr()" />
+		<input id="btn_add_style" type="button" value="添加属性" onclick="addAttr()"/>
+		
+		<p class="main">通过点击移除属性和添加属性来移除和为class赋值，控制这段文字的显示样式</p>
+		
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function getTextValue(){
+				var oTxt = document.getElementById("txt");
+				if(oTxt.value.length < 1){
+					alert("暂无输入");
+				}else{
+					alert(oTxt.value);
+				}
+			}
+			
+			function getRadioValue(){
+				var oRadios = document.getElementsByName("fruit");
+				for(var i=0;i<oRadios.length;i++){
+					if(oRadios[i].checked){
+						alert(oRadios[i].value);
+						return;
+					}
+				}
+			}
+			
+			function getCheckValue(){
+				var oFruits = document.getElementsByName("fruits");
+				var str = "";
+				for(var i=0;i<oFruits.length;i++){
+					if(oFruits[i].checked){
+						str+=oFruits[i].value;
+					}
+				}
+				alert(str);
+			}
+			
+			function getSelectValue(){
+				var oCity = document.getElementById("city");
+				alert(oCity.value);
+			}
+			
+			var flag = false;
+			function changeTxt(){
+				var oBtn = document.getElementById("btn");
+				if(flag){
+					oBtn.value = "修改";
+				}else {
+					oBtn.value = "update";
+				}
+				flag = !flag;
+			}
+		</script>
+	</head>
+	<body>
+		<input id="txt" type="text" />
+		<input type="button" value="获取文本框的值" onclick="getTextValue()"/></br>
+		
+		<label><input type="radio" name="fruit" value="apple"/> 苹果</label>
+		<label><input type="radio" name="fruit" value="banana"/>香蕉</label>
+		<label><input type="radio" name="fruit" value="watermalon"/>西瓜</label>
+		<input type="button" value="获取单选框的值" onclick="getRadioValue()"/></br>
+			
+		<div id="div_cb">
+		<label><input type="checkbox" name="fruits" value="apple"/> 苹果</label>
+		<label><input type="checkbox" name="fruits" value="banana"/>香蕉</label>
+		<label><input type="checkbox" name="fruits" value="watermalon"/>西瓜</label>
+		<input type="button" value="获取复选框的值" onclick="getCheckValue()"/></br>
+		</div>
+		
+		<select id="city">
+			<option value="beijing">北京</option>
+			<option value="shaghai">上海</option>
+			<option value="guangzhou">广州</option>
+		</select>
+		<input type="button" value="获取下拉菜单的值" onclick="getSelectValue()" /></br>
+		
+		<input id="btn" type="button" value="修改" onclick="changeTxt()"/>
+	</body>
+</html>

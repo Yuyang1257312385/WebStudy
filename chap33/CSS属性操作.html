@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*#box{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}*/
+			
+			.newStyle{
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+			
+			.oldStyle{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script>
+			function useStyle(){
+				var oBox = document.getElementById("box");
+				oBox.style.backgroundColor = "red";
+				alert(getComputedStyle(oBox).backgroundColor);
+			}
+			
+			function useCssText(){
+				var txt = "width:50px;height:50px;background-color:black;"
+				var oBox = document.getElementById("box");
+				oBox.style.cssText = txt;
+				alert(getComputedStyle(oBox).style.width);
+			}
+			
+			var flag = false;
+			//注意 ： 若使用这种方法，若原先是用id设置css ,那么使用class必须使用#id.className，若只是使用.className
+			//是显示不出来的，因为id的优先级是高于.className的
+			
+			//若为设置id的css,那么是直接可以使用.className来更改的
+			function actOption(){
+				var oBox = document.getElementById("box");
+				if(flag){
+					oBox.className = "oldStyle";
+				}else {
+					oBox.className = "newStyle";
+				}
+				flag = !flag;
+			}
+			
+			function getLineCss(){
+				var oLine = document.getElementById("line");
+				alert(oLine.style.width);
+			}
+			function getNoLineCss(){
+				var oBox = document.getElementById("box");
+				alert(oBox.style.width);
+			}
+			function getLineCompute(){
+				var oLine = document.getElementById("line");
+				alert(getComputedStyle(oLine).width);
+			}
+			
+			function getNoLineCompute(){
+				var oBox = document.getElementById("box");
+				alert(getComputedStyle(oBox).width);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="使用style对象" onclick="useStyle()" />
+		<input type="button" value="使用cssText方法" onclick="useCssText()" />
+		
+		<input type="button" value="实际操作" onclick="actOption()" /></br>
+		
+		<input type="button" value="获取行内css 使用obj.style.width" onclick="getLineCss()" />
+		<input type="button" value="获取内部css 使用obj.style.width" onclick="getNoLineCss()"/>
+		<input type="button" value="获取行内css 使用getComputeStyle" onclick="getLineCompute()" />
+		<input type="button" value="获取内部css 使用getComputeStyle" onclick="getNoLineCompute()" />
+		
+		<div id="box" class="oldStyle"></div>
+		
+		<div id="line" style="width: 100px;height: 50px;background-color: bisque;"></div>
+	</body>
+</html>

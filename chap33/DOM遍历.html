@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dom遍历</title>
+		<style type="text/css">
+			table{border-collapse: collapse;}
+			table,tr,td{border:1px solid gray;}
+		</style>
+		<script>
+			function getParentNode(){
+				var oTds = document.getElementsByTagName("td");
+				for(var i=0;i<oTds.length;i++){
+					oTds[i].onclick = function(){
+						//为什么用oTd[i]不可以？因为此时的i不一定是外面的i
+						var oTr = this.parentNode;
+						oTr.style.backgroundColor = "red";
+						oTr.style.color = "white";
+
+					};
+				}
+			}
+			
+			function getChildNode(){
+				var oUl = document.getElementById("list");
+				var childLength = oUl.childNodes.length;
+				var first = oUl.firstChild.innerHTML;
+				var last = oUl.lastChild.innerHTML;
+				alert("all child length is " + childLength + "first : " + first + " last : " + last);
+			}
+			
+			function getChildElement(){
+				var oUl = document.getElementById("list");
+				var childElementLength = oUl.children.length;
+				var first = oUl.firstElementChild.innerHTML;
+				var last = oUl.lastElementChild.innerHTML;
+				alert("all child length is " + childElementLength + "first : " + first + " last : " + last);
+
+			}
+			
+			function getBrother(){
+
+				var oUl = document.getElementById("list");
+				var oLi = oUl.childNodes[2];
+				var oBigBro = oLi.previousSibling;
+				var oLittleBro = oLi.nextSibling;
+				alert(oBigBro.innerHTML + "---" + oLittleBro.innerHTML);
+			}
+			
+			function getBrotherElement(){
+				var oUl = document.getElementById("list");
+				var oLi = oUl.children[2];
+				var oBigBro = oLi.previousElementSibling;
+				var oLittleBro = oLi.nextElementSibling;
+				alert(oBigBro.innerHTML + "---" + oLittleBro.innerHTML);
+
+			}
+			
+		</script>
+	</head>
+	<body>
+		 <table>
+		 	<tr>
+		 	<td>小明</td>
+		 	<td>80</td>
+		 	<td>80</td>
+		 </tr>
+		 <tr>
+		 	<td>小明</td>
+		 	<td>80</td>
+		 	<td>80</td>
+		 </tr>
+		 <tr>
+		 	<td>小明</td>
+		 	<td>80</td>
+		 	<td>80</td>
+		 </tr>
+		 </table>
+		 
+		<input type="button" value="查找父元素" onclick="getParentNode()" />
+	    </br>
+	    
+	    <ul id="list">
+	    	<li>HTML</li>
+	    	<li>css</li>
+	    	<li>js</li>
+	    	<li>haha</li>
+	    	<li>hihi</li>
+	    </ul>
+		<input type="button" value="查找所有子节点" onclick="getChildNode()" />
+		<input type="button" value="查找所有子元素节点" onclick="getChildElement()" />
+		
+		<input type="button" value="查找兄弟节点" onclick="getBrother()" />
+		<input type="button" value="查找兄弟元素节点" onclick="getBrotherElement()" />
+		
+		
+		 
+	</body>
+</html>

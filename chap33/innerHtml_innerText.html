@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function addImg(){
+				var oDiv = document.getElementById("innerPic");
+				oDiv.innerHTML = '<img class="pic" src="img/ic_launcher.png" style="border:1px solid silver"/>';
+			}
+			
+			function getInner(){
+				var oP = document.getElementById("content");
+				alert("innerHTML : " + oP.innerHTML + "----- innerText : "+oP.innerText);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="添加图片" onclick="addImg()" />
+		<input type="button" value="获取innerHtml和innerText" onclick="getInner()"/>
+		<div id="innerPic"></div>
+		<p id="content"> <strong>绿叶学习网</strong></p>
+	</body>
+</html>
