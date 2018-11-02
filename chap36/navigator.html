@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function getAgent(){
+				var agent = window.navigator.userAgent;
+				if(agent.indexOf("MSIE") != -1){
+					alert("IE浏览器");
+				}else if(agent.indexOf("Chrome") != -1){
+					alert("Chrome");
+				}else if(agent.indexOf(Firefox) != -1){
+					alert("FireFox");
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" value="获取浏览器类型" onclick="getAgent()" />
+	</body>
+</html>

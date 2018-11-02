@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function alert2sByCode(){
+				setTimeout('alert("两秒弹窗")',2000);
+			}
+			
+			
+			
+			var timer = null;
+			function alertMsg(){
+				alert("三秒弹窗");
+			}
+			function alert3sByMethod(){
+				timer = setTimeout(alertMsg,3000);
+			}
+			function cancelAlert(){
+				clearTimeout(timer);
+			}
+			
+			
+			
+			var n=100;
+			var t = null;
+			function counterDown(){
+				clearInterval(t);
+				t = setInterval(down,1000);
+			}
+			function down(){
+				if(n > 0){
+					n--;
+					document.getElementById("btn").value = n;
+				}
+			}
+			function cancelCounterDown(){
+				clearInterval(t);
+			}
+			
+			
+		
+			var tim = null;
+			var i =0;
+			function start(){
+				//先清一下，防止越来越快
+				clearInterval(tim);
+				tim = setInterval(function(){
+					var oDiv = document.getElementById("color");
+					var colors = ["red","blue","green","black"];
+					i++;
+					i = i%4;
+					oDiv.style.backgroundColor = colors[i];
+				},1000);
+			}
+			function pause(){
+				clearInterval(tim);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="两秒弹框" onclick="alert2sByCode()" />
+		
+		<input type="button" value="三秒弹框" onclick="alert3sByMethod()" />
+
+		<input type="button" value="取消弹窗" onclick="cancelAlert()"/></br>
+		
+		<input type="button" value="倒计时" onclick="counterDown()" />
+		<input type="button" value="取消倒计时" onclick="cancelCounterDown()" />
+		<input type="button" value="100" id="btn" /></br>
+		
+		<input id="start" type="button" value="开始" onclick="start()" />
+		<input id="pause" type="button" value="暂停" onclick="pause()" /></br>
+		<div id="color" style="width: 80px;height: 80px;"></div>
+	</body>
+</html>

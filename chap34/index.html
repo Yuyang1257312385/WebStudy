@@ -3,51 +3,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		
-		<script>
-			function confirm(){
-				var oUrl = document.getElementById("url").value;
-				if(oUrl.length <1){
-					alert("请输入播放地址");
-					retur;
-				}
-				var oChanel = document.getElementsByName("chanel");
-				var url = "";
-				for(var i=0;i<oChanel.length;i++){
-					if(oChanel[i].checked){
-						url = oChanel[i].value + oUrl;
-					}
-				}
-				var oFrame = document.getElementById("frame");
-				oFrame.src = url;
-			}
-		</script>
 	</head>
 	<body>
-		
-
-		输入播放地址： <input id="url" type="text" style="width: 500px;height: 40px;" /></br>
-		<label><input type="radio" name="chanel" value="http://api.bbbbbb.me/jx/?url=" checked="checked"/>线路1</label>
-		<label><input type="radio" name="chanel" value="http://www.a305.org/weixin.php?url=" />线路2</label>
-		<label><input type="radio" name="chanel" value="http://api.91exp.com/svip/?url=" />线路3</label>
-		<label><input type="radio" name="chanel" value="http://api.bbbbbb.me/ipsign/player.php?v=" />线路4</label>
-		<label><input type="radio" name="chanel" value="http://api.ledboke.com/vip/?url=" />线路5</label>
-		<label><input type="radio" name="chanel" value="http://17kyun.com/api.php?url=" />线路6</label>
-		<label><input type="radio" name="chanel" value="http://vip.qike.ink/?url=" />线路7</label>
-		<label><input type="radio" name="chanel" value="http://www.47jx.com/?url=" />线路8</label>
-		<label><input type="radio" name="chanel" value="http://jx.hanximeng.com/vip.php?url="  />线路9</label>
-		<label><input type="radio" name="chanel" value="http://yun.baiyug.cn/vip/?url=" />线路10</label>
-		<label><input type="radio" name="chanel" value="http://jx.myxit.cn/vip/?url=" />线路11</label>
-		<label><input type="radio" name="chanel" value="http://aikan-tv.com/?url=" />线路12</label>
-		<label><input type="radio" name="chanel" value="http://jiexi.92fz.cn/player/vip.php?url=" />线路13</label>
-		<label><input type="radio" name="chanel" value="http://api.662820.com/xnflv/index.php?url=" />线路14</label>
-		<label><input type="radio" name="chanel" value="http://000o.cc/jx/ty.php?url=" />线路15</label>
-		<label><input type="radio" name="chanel" value="http://qigetv.xyz/tv.php?url=" />线路16</label>
-	    </br>
-		
-		<input type="button" value="确认" onclick="confirm()"/>
-	    </br>
-	    <iframe id="frame" src="" style="width: 600px;height: 400px;"></iframe>
+		<a href="鼠标事件.html">鼠标事件</a>
+		<a href="键盘事件.html">键盘事件</a>
+		<a href="表单事件.html">表单事件</a>
+		<a href="编辑事件.html">编辑事件</a>
+		<a href="页面事件.html">页面事件</a>
 
 		
 	</body>

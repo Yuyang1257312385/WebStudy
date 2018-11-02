@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>页面事件</title>
+		<script>
+			window.onload = function(){
+				alert("欢迎来");
+			};
+			
+			
+			//windows7  chrome不执行
+			window.onbeforeunload = function(){
+				return "bu";
+			};
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<input id="btn" type="button" value="hello" />
+	</body>
+</html>

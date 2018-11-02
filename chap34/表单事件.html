@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单事件</title>
+		
+		<script>
+			window.onload = function(){
+				var oSearch = document.getElementById("search");
+				//获取焦点
+				oSearch.onfocus = function(){
+					oSearch.value = "获取焦点";
+				};
+				//失去焦点
+				oSearch.onblur = function(){
+					oSearch.value = "失去焦点";
+				}
+				
+				//自动获取焦点
+				oSearch.focus();
+				
+				
+			    //选中
+				var oSelect = document.getElementById("select");
+				oSelect.onclick = function(){
+					this.select();
+				}
+				var oArea = document.getElementById("area");
+				oArea.onclick = function(){
+					this.select();
+				}
+				
+				//onchange的使用---单选框
+				var oFruit = document.getElementsByName("fruit");
+				var oResult = document.getElementById("result");
+				for(var i=0;i<oFruit.length;i++){
+					oFruit[i].onchange = function(){
+						if(this.checked){
+							oResult.innerText = "选择的是 ： " + this.value;
+						}
+					}
+				}
+				
+				//onchange的使用---多选框
+				var oSelectAll = document.getElementById("selectall");
+				var oAnimals = document.getElementsByName("animal");
+				oSelectAll.onchange = function(){
+					if(oSelectAll.checked){
+						for(var i=0;i<oAnimals.length;i++){
+							oAnimals[i].checked = true;
+						}
+					}else {
+						for(var i=0;i<oAnimals.length;i++){
+							oAnimals[i].checked = false;
+						}
+					}
+				}
+				
+				//onchange使用 ---下拉列表
+				var oColor = document.getElementById("color");
+				oColor.onchange = function(){
+					var value = this.options[this.selectedIndex].value;
+					alert(value);
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<input id="search" type="text" value="无焦点"/>
+		<input type="button" value="确定" /></br>
+		
+		<input id="select" type="text" value="select()的使用:选中" />
+		<textarea id="area" cols="10" rows="5">select()选中测试</textarea>
+		
+	    </br>
+	    onchange常用于具有多个选项的表单元素中。
+	    单选框选中一项时触发，</br>
+	    复选框选择其中一项时触发</br>
+	    下拉列表选择其中一项时触发</br>
+	    
+	    <label><input type="radio" name="fruit" value="香蕉" />香蕉</label>
+	    <label><input type="radio" name="fruit" value="苹果"/>苹果</label>
+	    <div id="result"></div>
+	    
+	   </br>
+	    <label><input id="selectall" type="checkbox" />全选/反选</label>
+	    <label><input type="checkbox" name="animal" value="小狗"/>小狗</label>
+	    <label><input type="checkbox" name="animal" value="小猫"/>小猫</label>
+	    <label><input type="checkbox" name="animal" value="小猪"/>小猪</label>
+	    <label><input type="checkbox" name="animal" value="小虎"/>小虎</label></br>
+	    
+	    
+	    <select id="color">
+	    	<option value="红">红</option>
+	    	<option value="绿">绿</option>
+	    	<option value="蓝">蓝</option>
+	    </select>
+	    
+	    
+	</body>
+</html>

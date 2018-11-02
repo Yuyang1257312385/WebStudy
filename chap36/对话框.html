@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function showAlert(){
+				alert("这是个alert")
+			}
+			
+			function showConfirm(){
+				if(confirm("是否跳转")){
+					window.location.href = "http://www.jikedaohang.com/";
+				}else {
+					alert("取消跳转");
+				}
+			}
+			
+			function showPrompt(){
+				var str = prompt("请输入姓名");
+				alert("姓名 ： " + str);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="弹出alert" onclick="showAlert()"/>
+		<input type="button" value="弹出confirm" onclick="showConfirm()"/>
+		<input type="button" value="弹出prompt" onclick="showPrompt()"/>
+
+	</body>
+</html>

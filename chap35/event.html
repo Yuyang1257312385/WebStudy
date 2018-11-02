@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var oTypeBtn = document.getElementById("btn_type");
+				oTypeBtn.addEventListener("click",function(e){
+					alert(e.type);
+				},false);
+				
+				document.addEventListener("keydown",function(e){
+					if(e.shiftKey || e.altKey || e.ctrlKey){
+						alert("shift alt ctrl被禁用了");
+					}
+					var oSpan = document.getElementById("content");
+					switch(e.keyCode){
+						case 38:
+						    oSpan.innerText = "上";
+						    break;
+						case 40:
+						    oSpan.innerText = "下";
+						    break;
+						case 37:
+						    oSpan.innerText = "左";
+						    break;
+						case 39:
+						    oSpan.innerText = "右";
+						    break;
+					}
+					
+				},false);
+				
+				var oBtn1 = document.getElementById("btn_1");
+				var oBtn2 = document.getElementById("btn_2");
+				function getId(){
+					alert(this.id);
+				}
+				oBtn1.addEventListener("mouseover",getId,false);
+				oBtn2.addEventListener("mouseover",getId,false);
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input id="btn_type" type="button" value="获取type" /></br>
+		<p >你俺的是 ： <span id="content"></span></p></br>
+		
+		<input type="button" id="btn_1" value="this测试 : id是btn_1" />
+		<input type="button" id="btn_2" value="this测试 : id是btn_2" />
+	</body>
+</html>

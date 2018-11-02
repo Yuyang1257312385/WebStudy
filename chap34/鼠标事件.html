@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		
+		<script>
+			window.onload = function(){
+				var oDiv = document.getElementById("div1");
+				oDiv.onclick = alertMsg;
+				function alertMsg(){
+					alert("鼠标点击事件");
+				}
+				
+				var oP = document.getElementById("mouse_out_over");
+				oP.onmouseover = function(){
+					oP.innerText = "鼠标移入 onMouseOver"
+					oP.style.backgroundColor = "red";
+				}
+				
+				oP.onmouseout = function(){
+					oP.innerText = "鼠标移出 onMouseOut"
+					oP.style.backgroundColor = "yellow";
+				}
+				
+				var oP1 = document.getElementById("mouse_down_up");
+				oP1.onmousedown = function(){
+					oP1.innerText = "鼠标按下 onMouseDown"
+				}
+				oP1.onmouseup = function(){
+					oP1.innerText = "鼠标抬起 onMouseUp"
+				}
+				
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="div1" >鼠标点击事件</div>
+		
+	    </br>
+	    
+		<p id="mouse_out_over">鼠标移入移除测试</p></br>
+		
+		<p id="mouse_down_up">鼠标按下松开</p>
+	</body>
+</html>

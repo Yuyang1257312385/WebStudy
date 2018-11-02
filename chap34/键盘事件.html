@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>键盘事件</title>
+		
+		<script>
+			window.onload = function(){
+				var oTxt = document.getElementById("txt");
+				var oNum = document.getElementById("num");
+				oTxt.onkeyup = function(){
+					var length = oTxt.value.length;
+					oNum.innerText = length;
+				}
+				
+				var oInputNum = document.getElementById("input_num");
+				var oTip = document.getElementById("tip");
+				//正则表达式
+				var regx = /^[0-9]*$/;
+				oInputNum.onkeyup = function(){
+					if(regx.test(oInputNum.value)){
+						oTip.innerText = "输入正确";
+					}else {
+						oTip.innerText = "请输入数字";
+					}
+				}
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<input id="txt" type="text" /></br>
+		<div>字符长度为 ： <span id="num">0</span></div>
+		
+	</br></br>
+	    <input id="input_num" type="text" />
+	    <div id="tip"></div>
+	</body>
+</html>

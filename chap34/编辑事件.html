@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				//防止复制
+				document.oncopy = function(){
+					return false;
+				}
+				
+				//防止选中
+				document.onselectstart = function(){
+					return false;
+				}
+				
+				//禁止鼠标右键
+				document.oncontextmenu = function(){
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div >这一节的东西主要是用来防止被复制的</div>
+	</body>
+</html>

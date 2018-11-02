@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>窗口操作</title>
+		
+		<script>
+			function openUrlNewWindow(){
+				window.open("http://www.jikedaohang.com/","_blank");
+			}
+			
+			function openUrlThisWindow(){
+				window.open("http://www.jikedaohang.com/","_self");
+			}
+			
+			function openNewWindow(){
+				window.open();
+			}
+			
+			var opener = null;
+			function writeNewWindow(){
+				opener = window.open();
+				var strHtml = '<!DOCTYPE html>\
+						<head>\
+							<meta charset="UTF-8">\
+							<title>new window</title>\
+						</head>\
+						<body>\
+							<div id="div1" >输入的内容</div>\
+						</body>\
+					</html>';
+				opener.document.write(strHtml);
+			}
+			
+			function operateEle(){
+				var oDiv = opener.document.getElementById("div1");
+				oDiv.style.color = "red";
+			}
+			
+			function closeCurrent(){
+				window.close();
+			}
+			
+			function closeNew(){
+				opener.close();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="在新窗口打开链接" onclick="openUrlNewWindow()"/></br>
+		<input type="button" value="在本窗口打开链接" onclick="openUrlThisWindow()"/></br>
+		<input type="button" value="打开空白窗口" onclick="openNewWindow()"/></br>
+		<input type="button" value="在空白窗口输出页面" onclick="writeNewWindow()"/></br>
+		<input type="button" value="操作空白窗口元素" onclick="operateEle()"/></br>
+		<input type="button" value="关闭新窗口" onclick="closeNew()" />
+		<input type="button" value="关闭当前窗口" onclick="closeCurrent()"/></br>
+
+	</body>
+</html>
